@@ -1,25 +1,35 @@
 # Description
 
-# If number divided by 3 print Fizz
-# If number divided by 5 print Buzz
+# If number is divisible by 3 print Fizz
+# If number is divisible by 5 print Buzz
 # If number divisible by both 3 and 5, print Fizzbuzz
+# If number is divisible by 7 print Baz
 
 class Fizzbuzz
 
   def call
 
-    (1..500).each do |n|
+    (1..100).each do |n|
 
-      if n % 3 == 0 && n % 5 == 0
-        puts "Fizzbuzz"
-      elsif n % 3 == 0
-        puts "Fizz"
-      elsif n % 5 == 0
-        puts "Buzz"
-      else
-        puts n
+      x = ''
+
+      if n % 3 == 0
+        x += "Fizz"
       end
 
+      if n % 5 == 0
+        x += "Buzz"
+      end
+
+      if n % 7 == 0
+        x += "Baz"
+      end
+
+      if x == ''
+        puts n
+      else
+        puts x
+      end
     end
   end
 end
